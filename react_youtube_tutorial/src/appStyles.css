@@ -1,0 +1,5 @@
+/* CSS Modules cannot be used in child components better than appStyles example
+ - Tutorial 20 */
+.error {
+    color: red
+}
