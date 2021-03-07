@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import { ButtonToolbar, Button, Modal, FlexboxGrid, Panel, Form, FormGroup, ControlLabel, FormControl } from "rsuite";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const SignUpOuterContainer = {
-  background: "grey",
-};
-
 const SignUpNavItem = {
   color: "#fff",
   listStyle: "none",
@@ -43,7 +39,7 @@ class SignIn extends Component {
 
   render() {
     return (
-      <div style={SignUpOuterContainer} className="float-right mr-2">
+      <div className="float-right mr-2">
         <li style={SignUpNavItem} class="nav-item">
           <Button
             style={SignUpNavItemHref}

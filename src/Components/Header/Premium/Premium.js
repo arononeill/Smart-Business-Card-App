@@ -30,7 +30,7 @@ const menuIconBarsContainerClose = {
 }
 
 const iconBar = {
-  background: "black",
+  background: "white",
   display: "block",
   content: "",
   marginBottom: "4px",
@@ -40,7 +40,7 @@ const iconBar = {
 
 const iconBarClose1 = {
   webkitTransform: 'translateY(-6px) rotate(45deg)',
-  background: "black",
+  background: "white",
   display: "block",
   content: "",
   transition: "0.3s",
@@ -56,7 +56,7 @@ const iconBarClose2 = {
 const iconBarClose3 = {
   webkitTransform: 'translateY(-6px) rotate(-45deg)',
   transform: 'translateY(-6px) rotate(-45deg)',
-  background: "black",
+  background: "white",
   display: "block",
   content: "",
   marginBottom: "4px",
@@ -75,7 +75,7 @@ const PricingHeader = {
 };
 
 const iconBar1 = {
-  background: "black",
+  background: "white",
   display: "block",
   content: "",
   marginBottom: "4px",
@@ -85,7 +85,7 @@ const iconBar1 = {
 }
 
 const iconBar2 = {
-  background: "black",
+  background: "white",
   display: "block",
   content: "",
   marginBottom: "4px",
@@ -94,13 +94,13 @@ const iconBar2 = {
 }
 
 const iconBar3 = {
-  background: "black",
+  background: "white",
   display: "block",
   content: "",
   marginBottom: "4px",
   transition: "0.3s",
   height: "2px",
-  width: "25%"
+  width: "50%"
 }
 
 class Premium extends Component {
@@ -117,6 +117,7 @@ class Premium extends Component {
     this.setState({
       show: false,
     });
+    this.handleCloseToggle();
   }
   open(size) {
     this.setState({
@@ -166,8 +167,9 @@ class Premium extends Component {
         <Modal
           size={this.state.size}
           show={this.state.show}
-          onHide={this.close}
           shouldCloseOnOverlayClick={false}
+          onHide={this.close}
+          
         >
           <Modal.Header>
             <Modal.Title style={PricingHeader}>Premium Pricing</Modal.Title>

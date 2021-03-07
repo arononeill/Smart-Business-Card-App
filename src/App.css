@@ -54,3 +54,7 @@
 .rs-sidenav-subtle {
   background-color: transparent !important;
 }
+
+.rs-sidebar {
+  height: -webkit-fill-available;
+}
