@@ -13,10 +13,14 @@ import {
   StickyIn,
   ZoomIn,
 } from "react-scroll-motion";
-import Section from "../Section";
+import Section from "../Body/Section";
 import { Button } from "rsuite";
 import dummyText from "../../DummyText";
-import TestComponent from './TestComponent'
+import HomePage from '../Body/HomePage/HomePage'
+import Profile from "./Profile/Profile";
+import Cards from "./Cards/Cards";
+import Explore from "./Explore/Explore";
+import Settings from "./Settings/Settings";
 
 const FadeUp = batch(Fade(), Move(), Sticky());
 
@@ -45,35 +49,38 @@ class BodyContainer extends Component {
       <div className="App">
         <Section
           title="Section 1"
-          subtitle={'dummyText'}
-          dark={true}
-          id="section1"
+          subtitle={<HomePage/>}
+          id="home"
         />
-        <TestComponent/>
+        <HomePage/>
         <Section
           title="Section 2"
-          subtitle={dummyText}
+          subtitle={<Profile/>}
           dark={false}
           id="section2"
         />
+        <Profile/>
         <Section
           title="Section 3"
-          subtitle={dummyText}
+          subtitle={<Cards/>}
           dark={true}
           id="section3"
         />
+        <Cards/>
         <Section
           title="Section 4"
-          subtitle={dummyText}
+          subtitle={<Explore/>}
           dark={false}
           id="section4"
         />
+        <Explore/>
         <Section
           title="Section 5"
-          subtitle={dummyText}
+          subtitle={<Settings/>}
           dark={true}
           id="section5"
         />
+        <Settings/>
       </div>
     );
   }

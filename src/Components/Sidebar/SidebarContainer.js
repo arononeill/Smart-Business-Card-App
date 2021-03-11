@@ -94,10 +94,10 @@ class SidebarContainer extends Component {
             <Sidenav.Body>
                 <Link
                   activeClass="active"
-                  to="section1"
+                  to="home"
                   spy={true}
                   smooth={true}
-                  offset={-70}
+                  offset={70}
                   duration={500}
                 >
                   Home
