@@ -2,11 +2,12 @@ import { React, Component } from "react";
 import { Toggle, Sidenav, Nav, Icon, Dropdown } from "rsuite";
 import "rsuite/dist/styles/rsuite-default.css";
 import logo from "../../Images/logo.png";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 const SidebarContainerOuterDiv = {
   width: "250px",
   top: "50%",
-  position: "absolute",
+  position: "fixed",
   transform: "translate(0%, -50%)",
 };
 
@@ -16,28 +17,28 @@ const logoImage = {
 
 const logoNavbarBrand = {
   left: "40px",
-  position: 'fixed'
+  position: "fixed",
 };
 
 const logoText = {
-  display: 'flex',
-  justifyContent: 'center',
-  flexDirection: 'column',
-  fontSize: '1rem',
-  marginLeft: '35px',
-  color: 'white',
-  marginRight: '8px'
-}
+  display: "flex",
+  justifyContent: "center",
+  flexDirection: "column",
+  fontSize: "1rem",
+  marginLeft: "35px",
+  color: "white",
+  marginRight: "8px",
+};
 
 const logoLine = {
-  display: 'block'
-}
+  display: "block",
+};
 
 const logoLineSub = {
-  fontSize: '0.75rem',
-  opacity: '0.5s',
-  color: '#8c8c8c'
-}
+  fontSize: "0.75rem",
+  opacity: "0.5s",
+  color: "#8c8c8c",
+};
 
 class SidebarContainer extends Component {
   constructor() {
@@ -66,11 +67,20 @@ class SidebarContainer extends Component {
       <div>
         <a class="navbar-brand" style={logoNavbarBrand} href="#">
           <span class="logo float-left">
-            <img class="light-logo mt-1" src={logo} style={logoImage} alt="Logo" />
+            <img
+              class="light-logo mt-1"
+              src={logo}
+              style={logoImage}
+              alt="Logo"
+            />
           </span>
           <span class="text" style={logoText}>
-            <span class="line text-left" style={logoLine}>Smart Business Card</span>
-            <span class="line sub" style={logoLineSub}>Portfolio Template</span>
+            <span class="line text-left" style={logoLine}>
+              Smart Business Card
+            </span>
+            <span class="line sub" style={logoLineSub}>
+              Portfolio Template
+            </span>
           </span>
         </a>
         <div style={SidebarContainerOuterDiv}>
@@ -82,35 +92,40 @@ class SidebarContainer extends Component {
             onSelect={this.handleSelect}
           >
             <Sidenav.Body>
-              <Nav>
-                <Nav.Item
-                  title="Settings"
-                  className="text-left"
-                  eventKey="1"
-                  icon={<Icon icon="dashboard" />}
+                <Link
+                  activeClass="active"
+                  to="section1"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
                 >
                   Home
-                </Nav.Item>
-                <Nav.Item className="text-left" eventKey="2" icon={<Icon icon="profile" />}>
-                  Profile
-                </Nav.Item>
-                <Nav.Item className="text-left" eventKey="3" icon={<Icon icon="envelope" />}>
-                  Cards
-                </Nav.Item>
-                <Nav.Item className="text-left" eventKey="4" icon={<Icon icon="group" />}>
-                  Explore
-                </Nav.Item>
-                {/* <Dropdown
-                  placement="rightStart"
-                  eventKey="3"
-                  title="Settings"
-                  icon={<Icon icon="magic" />}
-                >
-                  <Dropdown.Item eventKey="3-1">Geo</Dropdown.Item>
-                  <Dropdown.Item eventKey="3-2">Devices</Dropdown.Item>
-                  <Dropdown.Item eventKey="3-3">Loyalty</Dropdown.Item>
-                </Dropdown> */}
-              </Nav>
+                </Link><br/>
+                <Link
+                  activeClass="active"
+                  to="section2"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                >Profile</Link><br/>
+                  <Link
+                  activeClass="active"
+                  to="section3"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                >Cards</Link><br/>
+                <Link
+                  activeClass="active"
+                  to="section4"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                >Explore</Link>
             </Sidenav.Body>
           </Sidenav>
         </div>

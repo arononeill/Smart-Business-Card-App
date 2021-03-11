@@ -38,8 +38,6 @@
 }
 
 .backgroundImage {
-  height: 100vh;
-  width: 100vw;
   background-image: url('./Images/sbc.png') ;
   background-position: center center;
   background-repeat: no-repeat;
@@ -57,4 +55,9 @@
 
 .rs-sidebar {
   height: -webkit-fill-available;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
 }
