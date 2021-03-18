@@ -61,3 +61,48 @@
   width: 0px;
   background: transparent; /* make scrollbar transparent */
 }
+
+.rs-sidenav-body a {
+  opacity: 0.3;
+}
+
+.rs-sidenav-body a.active {
+  opacity: 1;
+  color: white !important;
+}
+
+.scrolldown a:before {
+  position: absolute;
+  content: "";
+  bottom: 54px;
+  right: 0;
+  height: 4px;
+  width: 4px;
+  margin-right: 16px;
+  border-radius: 40px;
+  background: white;
+  transition: 0.3s;
+}
+
+.scrolldown a:after {
+  position: absolute;
+  content: "";
+  bottom: 30px;
+  right: 0;
+  height: 34px;
+  width: 18px;
+  margin-right: 9px;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  transition: 0.3s;
+}
+
+.scrolldown a:hover:before {
+  bottom: 38px;
+  background: #ffffff;
+}
+
+.PaginationActive {
+  background: white !important;
+}

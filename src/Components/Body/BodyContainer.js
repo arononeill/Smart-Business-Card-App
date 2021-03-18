@@ -43,33 +43,35 @@ const HomePageBtn = {
   lineHeight: "1",
 };
 
+const BodyContainerContent = {
+  width: '80%',
+  color: 'white'
+}
+
 class BodyContainer extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="App" style={BodyContainerContent}>
         <Section
           title="Section 1"
           subtitle={<HomePage/>}
           id="home"
         />
-        <HomePage/>
         <Section
           title="Section 2"
           subtitle={<Profile/>}
           dark={false}
           id="section2"
         />
-        <Profile/>
         <Section
           title="Section 3"
           subtitle={<Cards/>}
           dark={true}
           id="section3"
         />
-        <Cards/>
         <Section
           title="Section 4"
-          subtitle={<Explore/>}
+          subtitle={dummyText}
           dark={false}
           id="section4"
         />

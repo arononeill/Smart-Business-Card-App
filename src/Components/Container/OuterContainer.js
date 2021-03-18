@@ -4,8 +4,17 @@ import SidebarContainer from "../Sidebar/SidebarContainer";
 import HeaderContainer from "../Header/HeaderContainer";
 import FooterContainer from "../Footer/Footer";
 import BodyContainer from "../Body/BodyContainer";
+import Pagination from './Pagination'
 import React from "react";
 import bImage from "../../Images/reactbg.png";
+
+const HeaderContainerStyle = {
+  position: "fixed",
+  margin: "1rem",
+  marginTop: ".8rem",
+  right: "0",
+  width: "100%",
+};
 
 function OuterContainer() {
   return (
@@ -15,12 +24,13 @@ function OuterContainer() {
           <SidebarContainer apperance="subtle" />
         </Sidebar>
         <Container>
-          <Header>
+          <Header style={HeaderContainerStyle} className="modal-container" >
               <HeaderContainer />
           </Header>
 
           <Content>
             <BodyContainer />
+            <Pagination/>
           </Content>
 
           <Footer>

@@ -9,6 +9,7 @@ const SidebarContainerOuterDiv = {
   top: "50%",
   position: "fixed",
   transform: "translate(0%, -50%)",
+  color: 'white'
 };
 
 const logoImage = {
@@ -97,7 +98,7 @@ class SidebarContainer extends Component {
                   to="home"
                   spy={true}
                   smooth={true}
-                  offset={70}
+                  offset={-300}
                   duration={500}
                 >
                   Home
