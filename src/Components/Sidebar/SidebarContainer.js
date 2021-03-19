@@ -2,44 +2,45 @@ import { React, Component } from "react";
 import { Toggle, Sidenav, Nav, Icon, Dropdown } from "rsuite";
 import "rsuite/dist/styles/rsuite-default.css";
 import logo from "../../Images/logo.png";
+import styled from "styled-components";
 import { Link, animateScroll as scroll } from "react-scroll";
 
-const SidebarContainerOuterDiv = {
-  width: "250px",
-  top: "50%",
-  position: "fixed",
-  transform: "translate(0%, -50%)",
-  color: 'white'
-};
+const SidebarContainerOuterDiv = styled.div`
+  width: 250px;
+  top: 50%;
+  position: fixed;
+  transform: translate(0%, -50%);
+  color: white;
+`
 
-const logoImage = {
-  height: "28px",
-};
+const LogoImage = styled.img`
+  height: 28px;
+`
 
-const logoNavbarBrand = {
-  left: "40px",
-  position: "fixed",
-};
+const LogoNavbarBrand = styled.a`
+  left: 40px;
+  position: fixed;
+`
 
-const logoText = {
-  display: "flex",
-  justifyContent: "center",
-  flexDirection: "column",
-  fontSize: "1rem",
-  marginLeft: "35px",
-  color: "white",
-  marginRight: "8px",
-};
+const LogoText = styled.span`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 1rem;
+  margin-left: 35px;
+  color: white;
+  margin-right: 8px;
+`
 
-const logoLine = {
-  display: "block",
-};
+const LogoLine = styled.span`
+  display: block;
+`
 
-const logoLineSub = {
-  fontSize: "0.75rem",
-  opacity: "0.5s",
-  color: "#8c8c8c",
-};
+const LogoLineSub = styled.span`
+  font-size: 0.75rem;
+  opacity: 0.5s;
+  color: #8c8c8c;
+`
 
 class SidebarContainer extends Component {
   constructor() {
@@ -66,25 +67,24 @@ class SidebarContainer extends Component {
 
     return (
       <div>
-        <a class="navbar-brand" style={logoNavbarBrand} href="#">
+        <LogoNavbarBrand class="navbar-brand" href="#">
           <span class="logo float-left">
-            <img
+            <LogoImage
               class="light-logo mt-1"
               src={logo}
-              style={logoImage}
               alt="Logo"
             />
           </span>
-          <span class="text" style={logoText}>
-            <span class="line text-left" style={logoLine}>
+          <LogoText class="text" >
+            <LogoLine class="line text-left">
               Smart Business Card
-            </span>
-            <span class="line sub" style={logoLineSub}>
+            </LogoLine>
+            <LogoLineSub class="line sub">
               Portfolio Template
-            </span>
-          </span>
-        </a>
-        <div style={SidebarContainerOuterDiv}>
+            </LogoLineSub>
+          </LogoText>
+        </LogoNavbarBrand>
+        <SidebarContainerOuterDiv>
           <Sidenav
             appearance="subtle"
             expanded={expanded}
@@ -129,7 +129,7 @@ class SidebarContainer extends Component {
                 >Explore</Link>
             </Sidenav.Body>
           </Sidenav>
-        </div>
+        </SidebarContainerOuterDiv>
       </div>
     );
   }

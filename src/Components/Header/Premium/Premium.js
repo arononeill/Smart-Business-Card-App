@@ -1,21 +1,22 @@
 import { React, Component } from "react";
 import { ButtonToolbar, Button, Modal } from "rsuite";
 import "bootstrap/dist/css/bootstrap.min.css";
+import styled from "styled-components";
 
 import ModalPricingBody from "./ModalPricingBody";
 
 // Styled Components //
-const menuIconOuterContainer = {
-  height: "40px",
-  width: "40px",
-  transition: "0.3s",
-  display: "inline-block",
-  position: "relative",
-  borderRadius: "2px",
-  opacity: "0.5",
-};
+const MenuIconOuterContainer = styled.span`
+  height: 40px;
+  width: 40px;
+  transition: 0.3s;
+  display: inline-block;
+  position: relative;
+  border-radius: 2px;
+  opacity: 0.5;
+`
 
-const menuIconBarsContainer = {
+const MenuIconBarsContainer = {
   display: "block",
   margin: "auto",
   marginTop: "15px",
@@ -28,15 +29,6 @@ const menuIconBarsContainerClose = {
   marginTop: "20px",
   width: "24px",
 }
-
-const iconBar = {
-  background: "white",
-  display: "block",
-  content: "",
-  marginBottom: "4px",
-  transition: "0.3s",
-  height: "2px",
-};
 
 const iconBarClose1 = {
   webkitTransform: 'translateY(-6px) rotate(45deg)',
@@ -142,11 +134,10 @@ class Premium extends Component {
             size="lg"
             onClick={(() => this.open("lg"))}
           >
-            <span
-              style={menuIconOuterContainer}
+            <MenuIconOuterContainer
               class="menu-icon menu-icon-random"
             >
-              <span style={isActive ? menuIconBarsContainer : menuIconBarsContainerClose} class="bars">
+              <span style={isActive ? MenuIconBarsContainer : menuIconBarsContainerClose} class="bars">
                 <span
                   style={isActive ? iconBar1 : iconBarClose1}
                   class="bar1"
@@ -160,7 +151,7 @@ class Premium extends Component {
                   class="bar3"
                 ></span>
               </span>
-            </span>
+            </MenuIconOuterContainer>
           </Button>
         </ButtonToolbar>
 

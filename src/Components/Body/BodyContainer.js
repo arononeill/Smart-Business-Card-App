@@ -1,4 +1,5 @@
 import { React, Component } from "react";
+import styled from "styled-components";
 import {
   Animator,
   ScrollContainer,
@@ -24,34 +25,15 @@ import Settings from "./Settings/Settings";
 
 const FadeUp = batch(Fade(), Move(), Sticky());
 
-const pageTwo = {
-  backgroundColor: "grey",
-};
-
-const pageText = {
-  color: "white",
-  fontSize: "3em",
-};
-
-const HomePageBtn = {
-  color: "#fff",
-  border: "2px solid #fff",
-  display: "inline-block",
-  borderRadius: "10rem",
-  transition: "3s",
-  background: "none",
-  lineHeight: "1",
-};
-
-const BodyContainerContent = {
-  width: '80%',
-  color: 'white'
-}
+const BodyContainerContent = styled.div`
+  width: 80%;
+  color: white;
+`
 
 class BodyContainer extends Component {
   render() {
     return (
-      <div className="App" style={BodyContainerContent}>
+      <BodyContainerContent className="App">
         <Section
           title="Section 1"
           subtitle={<HomePage/>}
@@ -83,7 +65,7 @@ class BodyContainer extends Component {
           id="section5"
         />
         <Settings/>
-      </div>
+      </BodyContainerContent>
     );
   }
 }

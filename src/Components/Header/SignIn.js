@@ -1,20 +1,21 @@
 import React, { Component } from "react";
 import { ButtonToolbar, Button, Modal, FlexboxGrid, Panel, Form, FormGroup, ControlLabel, FormControl } from "rsuite";
 import "bootstrap/dist/css/bootstrap.min.css";
+import styled from "styled-components";
 
-const SignUpNavItem = {
-  color: "#fff",
-  listStyle: "none",
-};
+const SignUpNavItem = styled.li`
+  color: #fff;
+  list-style: none;
+`
 
-const SignUpNavItemHref = {
-  color: "#fff",
-  border: "2px solid #fff",
-  borderRadius: "10rem",
-  transition: "3s",
-  background: "none",
-  lineHeight: "1",
-};
+const SignUpNavItemHref = styled(Button)`
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 10rem;
+  transition: 3s;
+  background: none;
+  line-height: 1;
+`
 
 class SignIn extends Component {
   constructor(props) {
@@ -40,16 +41,15 @@ class SignIn extends Component {
   render() {
     return (
       <div className="float-right mr-2">
-        <li style={SignUpNavItem} class="nav-item">
-          <Button
-            style={SignUpNavItemHref}
+        <SignUpNavItem class="nav-item">
+          <SignUpNavItemHref
             className="btn btn-outline-white btn-round"
             size="lg"
             onClick={() => this.open("md")}
           >
             Sign In
-          </Button>
-        </li>
+          </SignUpNavItemHref>
+        </SignUpNavItem>
 
         <Modal
           size={this.state.size}

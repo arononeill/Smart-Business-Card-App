@@ -1,60 +1,61 @@
 import React from "react";
 import { Button } from "rsuite";
 import { Link, animateScroll as scroll } from "react-scroll";
+import styled from "styled-components";
 
-const homeTitle = {
-  borderBottom: "2px solid currentColor",
-  transitionDelay: "0.3s",
-  fontSize: "3rem",
-};
+const HomeTitle = styled.h2`
+  border-bottom: 2px solid currentColor;
+  transition-delay: 0.3s;
+  font-size: 3rem;
+`
 
-const homeSubTitle = {
-  transitionDelay: "0.5s",
-};
+const HomeSubTitle = styled.h4`
+  transition-delay: 0.5s;
+`
 
-const learnMoreButton = {
-  color: "#fff",
-  border: "2px solid #fff",
-  borderRadius: "10rem",
-  transition: "3s",
-  background: "none",
-  lineHeight: "1",
-};
+const LearnMoreButton = styled(Button)`
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 10rem;
+  transition: 3s;
+  background: none;
+  line-height: 1;
+`
 
-const scrolldown = {
-  position: "absolute",
-  bottom: "0",
-  top: "auto",
-  right: "auto",
-  marginBottom: "20px",
-  left: "50%"
-};
+const Scrolldown = styled.footer`
+  position: absolute;
+  bottom: 0;
+  top: auto;
+  right: auto;
+  margin-bottom: 20px;
+  left: 50%;
+`
 
-const down = {
-  padding: "8px",
-  transition: "0.3s",
-  cursor: "pointer",
-};
+const Down = styled.a`
+  padding: 8px;
+  transition: 0.3s;
+  cursor: pointer;
+`
 
-const scrollDownText = {
-  position: "absolute",
-  width: "200px",
-  textAlign: "center",
-  left: "-100px",
-  top: "0",
-};
+const ScrollDownText = styled.span`
+  position: absolute;
+  width: 200px;
+  text-align: center;
+  left: -100px;
+  top: 0;
+  color: white;
+`
 
 const HomePage = () => {
   return (
     <div>
-      <h2 style={homeTitle}>Smart Business Card</h2>
-      <h4 style={homeSubTitle}>The Future of Business</h4>
-      <Button
-        style={learnMoreButton}
+      <HomeTitle>Smart Business Card</HomeTitle>
+      <HomeSubTitle>The Future of Business</HomeSubTitle>
+      <LearnMoreButton
         className="btn btn-outline-white btn-round mt-2"
       >
         Get Started
-      </Button>
+      </LearnMoreButton>
       <Link
         activeClass="active"
         to="section2"
@@ -63,12 +64,12 @@ const HomePage = () => {
         offset={-70}
         duration={500}
       >
-        <footer style={scrolldown} className="scrolldown">
-          <a style={down}>
+        <Scrolldown className="scrolldown">
+          <Down>
             <span></span>
-            <span style={scrollDownText}>Scroll Down</span>
-          </a>
-        </footer>
+            <ScrollDownText>Scroll Down</ScrollDownText>
+          </Down>
+        </Scrolldown>
       </Link>
     </div>
   );

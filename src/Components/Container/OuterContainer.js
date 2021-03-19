@@ -1,5 +1,6 @@
 import { Container, Header, Content, Footer, Sidebar } from "rsuite";
 import "rsuite/dist/styles/rsuite-default.css";
+import styled from "styled-components";
 import SidebarContainer from "../Sidebar/SidebarContainer";
 import HeaderContainer from "../Header/HeaderContainer";
 import FooterContainer from "../Footer/Footer";
@@ -8,13 +9,13 @@ import Pagination from './Pagination'
 import React from "react";
 import bImage from "../../Images/reactbg.png";
 
-const HeaderContainerStyle = {
-  position: "fixed",
-  margin: "1rem",
-  marginTop: ".8rem",
-  right: "0",
-  width: "100%",
-};
+const HeaderContainerStyle = styled(Header)`
+  position: fixed;
+  margin: 1rem;
+  margin-top: .8rem;
+  right: 0;
+  width: 100%;
+`
 
 function OuterContainer() {
   return (
@@ -24,9 +25,9 @@ function OuterContainer() {
           <SidebarContainer apperance="subtle" />
         </Sidebar>
         <Container>
-          <Header style={HeaderContainerStyle} className="modal-container" >
+          <HeaderContainerStyle className="modal-container" >
               <HeaderContainer />
-          </Header>
+          </HeaderContainerStyle>
 
           <Content>
             <BodyContainer />
@@ -43,8 +44,3 @@ function OuterContainer() {
 }
 
 export default OuterContainer;
-
-// const instance = (
-
-//   );
-//   ReactDOM.render(instance);

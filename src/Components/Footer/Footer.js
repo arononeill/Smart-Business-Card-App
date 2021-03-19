@@ -1,53 +1,54 @@
 import React, { Component } from "react";
+import styled from "styled-components";
 
-const footerRight = {
-  right: "2em",
-  bottom: "0.35em",
-  position: "fixed",
-  transition: "0.3s",
-};
+const FooterRight = styled.div`
+  right: 2em;
+  bottom: 0.35em;
+  position: fixed;
+  transition: 0.3s;
+`
 
-const footerRightSocial = {
-  display: "flex",
-  listStyle: "none outside none",
-};
+const FooterRightSocial = styled.ul `
+  display: flex;
+  list-style: none outside none;
+`
 
-const footerRightAhref = {
-  paddingLeft: "8px",
-  paddingRight: "8px",
-  display: "inline-block",
-  color: "rgba(255, 255, 255, 0.5)",
-  fontSize: '24px'
-};
+const FooterRightAhref = styled.a`
+  padding-left: 8px;
+  padding=right: 8px;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 24px;
+`
 
 class Footer extends Component {
   render() {
     return (
       <div>
-        <div class="footer-right" style={footerRight}>
-          <ul class="social" style={footerRightSocial}>
+        <FooterRight class="footer-right">
+          <FooterRightSocial class="social">
             <li>
-              <a href="" style={footerRightAhref}>
+              <FooterRightAhref href="">
                 <i class="icon fa fa-facebook"></i>
-              </a>
+              </FooterRightAhref>
             </li>
             <li>
-              <a href="" style={footerRightAhref}>
+              <FooterRightAhref href="">
                 <i class="icon fa fa-twitter"></i>
-              </a>
+              </FooterRightAhref>
             </li>
             <li>
-              <a href="" style={footerRightAhref}>
+              <FooterRightAhref href="">
                 <i class="icon fa fa-linkedin"></i>
-              </a>
+              </FooterRightAhref>
             </li>
             <li>
-              <a href="" style={footerRightAhref}>
+              <FooterRightAhref href="">
                 <i class="icon fa fa-instagram"></i>
-              </a>
+              </FooterRightAhref>
             </li>
-          </ul>
-        </div>
+          </FooterRightSocial>
+        </FooterRight>
       </div>
     );
   }
